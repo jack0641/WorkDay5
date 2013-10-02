@@ -5,7 +5,7 @@ Public Class Form1
     Private Sub btnDetermine_Click(sender As System.Object, e As System.EventArgs) Handles btnDetermine.Click
         Dim name As String
         name = txtFullName.Text
-        txtFirstName.Text = FirstName(name)
+        txtFirstName.Text = name.Substring(0, name.IndexOf(" "))
     End Sub
 
     Function FirstName(ByVal name As String) As String
