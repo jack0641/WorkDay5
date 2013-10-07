@@ -2,18 +2,21 @@
 Public Class Form1
 
 
+
     Private Sub btnCalculate_Click(sender As System.Object, e As System.EventArgs) Handles btnCalculate.Click
-        Dim a, b, c, a1, b1, c1 As Double
+        Dim a, b, z As Double
 
 
         a = CDbl(txtSideOne.Text)
         b = CDbl(txtSideTwo.Text)
-        a1 = CDbl(a ^ 2)
-        b1 = CDbl(b ^ 2)
-        c1 = CDbl((a1 + b1) ^ 0.5)
-
-        txtHyp.Text = CStr(c1)
-
+        z = Hypotenuse(a, b)
+        txtHyp.Text = CStr(z)
     End Sub
 
+    Function Hypotenuse(ByVal a As Double, ByVal b As Double) As Double
+        Dim C As Double
+        C = Math.Sqrt(a ^ 2 + b ^ 2)
+
+        Return C
+    End Function
 End Class
